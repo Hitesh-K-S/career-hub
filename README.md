@@ -6,6 +6,8 @@ projects, a 36-post LinkedIn cadence, and a job pipeline.
 **No build step. No dependencies. No framework.** Open `index.html` and it
 works.
 
+**Live:** <https://hitesh-k-s.github.io/career-hub/>
+
 ## Run it
 
 ```bash
@@ -79,5 +81,8 @@ them there.
 
 ## Deploying
 
-Static, so GitHub Pages works. `index.html` sits at the repo root, so Pages
-needs no build step and no Jekyll.
+Static, so GitHub Pages works with no build step. `index.html` sits at the repo
+root, so Jekyll is not involved.
+
+This repo is already deployed: <https://hitesh-k-s.github.io/career-hub/>
+(branch `main`, path `/`). Pushes to `main` redeploy automatically.
