@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Career Hub</title>
+<meta name="description" content="Course, project, LinkedIn and job tracker for the 60-day AWS + AI plan.">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1117'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%234c8dff'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="dot"></span>
+    <h1>Career&nbsp;Hub</h1>
+  </div>
+
+  <div class="daynav" id="daynav">
+    <button class="navbtn" id="prevDay" title="Previous day" aria-label="Previous day">&#8249;</button>
+    <div class="daylabel">
+      <span class="daynum" id="dayNum">1</span>
+      <span class="daymeta" id="dayMeta">&mdash;</span>
+    </div>
+    <button class="navbtn" id="nextDay" title="Next day" aria-label="Next day">&#8250;</button>
+  </div>
+
+  <div class="topactions">
+    <button class="btn ghost" id="btnExport" title="Download your progress as JSON">Export</button>
+    <button class="btn ghost" id="btnImport" title="Load progress from a JSON file">Import</button>
+    <button class="btn ghost icon" id="btnTheme" title="Toggle light / dark" aria-label="Toggle theme">&#9788;</button>
+    <input type="file" id="fileImport" accept="application/json" hidden>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs" role="tablist">
+  <button class="tab active" data-view="today"   role="tab">Today</button>
+  <button class="tab" data-view="courses" role="tab">Courses</button>
+  <button class="tab" data-view="projects" role="tab">Projects</button>
+  <button class="tab" data-view="linkedin" role="tab">LinkedIn</button>
+  <button class="tab" data-view="jobs"    role="tab">Jobs</button>
+  <div class="tab-ink" id="tabInk"></div>
+</nav>
+
+<main id="main">
+
+  <!-- ===================================================== TODAY -->
+  <section class="view" data-view="today">
+    <div class="progress-hero">
+      <div class="hero-cell">
+        <span class="hero-num" id="statGen">0%</span>
+        <span class="hero-lab" id="labGen">Generation</span>
+        <div class="bar"><i id="barGen" style="width:0%"></i></div>
+      </div>
+      <div class="hero-cell">
+        <span class="hero-num" id="statAws">0%</span>
+        <span class="hero-lab" id="labAws">AWS re/Start</span>
+        <div class="bar"><i id="barAws" style="width:0%"></i></div>
+      </div>
+      <div class="hero-cell">
+        <span class="hero-num" id="statPro">0%</span>
+        <span class="hero-lab" id="labPro">Projects</span>
+        <div class="bar"><i id="barPro" style="width:0%"></i></div>
+      </div>
+      <div class="hero-cell">
+        <span class="hero-num" id="statLi">0/36</span>
+        <span class="hero-lab" id="labLi">LinkedIn</span>
+        <div class="bar"><i id="barLi" style="width:0%"></i></div>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div class="col-main">
+        <div class="card">
+          <div class="card-head">
+            <h2>AWS re/Start &middot; today's target</h2>
+            <span class="tag" id="todayWeek">week 1</span>
+          </div>
+          <div id="todayAws" class="checklist"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <h2>Project milestone</h2>
+            <span class="tag" id="todayProjWeek"></span>
+          </div>
+          <div id="todayProject" class="checklist"></div>
+        </div>
+      </div>
+
+      <div class="col-side">
+        <div class="card">
+          <div class="card-head"><h2>Generation &middot; morning</h2>
+            <span class="count" id="amCount"></span></div>
+          <div id="todayAm" class="checklist"></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h2>Generation &middot; afternoon</h2>
+            <span class="count" id="pmCount"></span></div>
+          <div id="todayPm" class="checklist"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================== COURSES -->
+  <section class="view" data-view="courses" hidden>
+    <div class="toolbar">
+      <div class="seg" id="courseSeg">
+        <button class="segbtn active" data-course="gen">Generation</button>
+        <button class="segbtn" data-course="aws">AWS re/Start</button>
+      </div>
+      <input class="search" id="courseSearch" type="search" placeholder="Filter modules or items&hellip;" autocomplete="off">
+      <label class="check"><input type="checkbox" id="hideDone"> hide completed</label>
+    </div>
+    <div id="courseBody"></div>
+  </section>
+
+  <!-- ================================================== PROJECTS -->
+  <section class="view" data-view="projects" hidden>
+    <div class="toolbar">
+      <input class="search" id="projSearch" type="search" placeholder="Filter milestones&hellip;" autocomplete="off">
+      <label class="check"><input type="checkbox" id="hideDoneProj"> hide completed</label>
+    </div>
+    <div id="projBody"></div>
+  </section>
+
+  <!-- ================================================== LINKEDIN -->
+  <section class="view" data-view="linkedin" hidden>
+    <div class="card rules">
+      <h2>Rules that matter</h2>
+      <ol id="liRules"></ol>
+    </div>
+    <div class="toolbar">
+      <input class="search" id="liSearch" type="search" placeholder="Filter posts&hellip;" autocomplete="off">
+      <span class="hint" id="liCount"></span>
+    </div>
+    <div id="liBody"></div>
+  </section>
+
+  <!-- ====================================================== JOBS -->
+  <section class="view" data-view="jobs" hidden>
+    <div class="card">
+      <h2>Target</h2>
+      <div id="jobTarget" class="target-grid"></div>
+    </div>
+    <div class="card">
+      <h2>Playbook</h2>
+      <div id="jobPlay" class="checklist"></div>
+    </div>
+    <div class="card">
+      <h2>Question bank</h2>
+      <ol id="jobQuestions" class="qbank"></ol>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <h2>Applications</h2>
+        <button class="btn" id="addJob">+ add</button>
+      </div>
+      <div class="tablewrap">
+        <table id="jobTable">
+          <thead><tr>
+            <th>Company</th><th>Role</th><th>Applied</th><th>Stage</th><th>Follow up</th><th></th>
+          </tr></thead>
+          <tbody id="jobRows"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

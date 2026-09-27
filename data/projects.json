@@ -1,0 +1,99 @@
+{
+ "target": {
+  "primary": "AI Engineer / AWS Cloud Engineer (SysOps)",
+  "secondary": "Backend PHP/Laravel with cloud",
+  "note": "Land Cloud/SysOps first for volume, use the AI projects as the differentiator to move up."
+ },
+ "cost": {
+  "monthlyBudgetINR": 500,
+  "freeTier": ["EC2 t3.micro (750h/mo)", "Lambda 1M req/mo", "API Gateway", "S3 5GB", "DynamoDB", "SSM", "Secrets Manager", "CloudWatch"],
+  "avoid": ["RDS free tier - allocation is unreliable", "NAT Gateway - ~$32/mo", "Data transfer out beyond 15GB/mo"],
+  "fallback": "Lightsail $5/mo bundled if EC2/RDS credit runs out"
+ },
+ "projects": [
+  {
+   "id": "accospark-aws",
+   "name": "AccoSpark on AWS",
+   "tagline": "Ship a real Laravel app to production AWS with IaC, CI/CD and monitoring",
+   "whyItStandsOut": "Real 18.9k-LOC production-shaped app with tests, not a tutorial. Proves you can both ship software and operate it.",
+   "stack": ["Laravel 12", "PHP 8.2", "MySQL 8", "EC2 / Elastic Beanstalk", "S3", "CloudFront", "Route 53", "ACM", "CloudWatch", "SSM Session Manager", "Secrets Manager", "GitHub Actions", "CloudFormation"],
+   "sourceRepo": "/home/hitesh/hitesh/projects/AccoSpark",
+   "github": "https://github.com/Hitesh-K-S/AccoSpark",
+   "targetWeek": 8,
+   "mustShipByWeek": 10,
+   "interviewAngles": [
+    "Why Elastic Beanstalk over plain EC2 and over Lambda for a stateful Laravel app?",
+    "How would you do zero-downtime deploys and rollbacks?",
+    "Where do secrets live and how do you rotate them?",
+    "What are your RTO and RPO, and what would you do differently to improve them?",
+    "How do you keep the monthly bill under control?"
+   ],
+   "milestones": [
+    {"id": "as-1", "title": "AWS account hardened", "detail": "Root MFA, separate IAM user, budget alarm at INR 500, region locked (ap-south-1)", "week": 1, "post": "What I changed in my AWS account on day one before touching a single service"},
+    {"id": "as-2", "title": "Architecture decision record", "detail": "One page: why each service, what the alternatives were, what it costs", "week": 2, "post": "Why I picked Elastic Beanstalk over Lambda for my Laravel app"},
+    {"id": "as-3", "title": "Deploy to EC2 via user-data", "detail": "Get it running manually first. No IaC yet.", "week": 6, "post": "My Laravel app is finally running on AWS. Here is the boring part that broke."},
+    {"id": "as-4", "title": "RDS MySQL provisioned", "detail": "Private subnet, security group, encrypted, automated backups on", "week": 6, "post": "S3 for files, RDS for the database - the two-storage-pattern problem in one post"},
+    {"id": "as-5", "title": "S3 + CloudFront for static/media", "detail": "Origin access control so S3 stays private", "week": 7, "post": "I locked down my S3 bucket. Here is the policy mistake everyone makes once."},
+    {"id": "as-6", "title": "Route 53 + ACM TLS", "detail": "Custom domain, auto-renewing certificate, HTTP redirect", "week": 7, "post": "Custom domain + free TLS on AWS in 20 minutes"},
+    {"id": "as-7", "title": "SSM Session Manager, SSH keys revoked", "detail": "Prove you can get in without SSH keys", "week": 7, "post": "I deleted my SSH keys and can still access my server. Here is how."},
+    {"id": "as-8", "title": "Secrets Manager wired in", "detail": "DB password, Google OAuth secret, OpenRouter key all moved out of .env", "week": 7, "post": "My .env had 4 production secrets in it. Moving them to Secrets Manager."},
+    {"id": "as-9", "title": "CloudWatch alarms + dashboard", "detail": "CPU, disk, and a custom error-rate metric. Alarm -> SNS", "week": 8, "post": "The three CloudWatch alarms I set up before telling anyone my app is live"},
+    {"id": "as-10", "title": "GitHub Actions deploy pipeline", "detail": "Push to main -> tests -> deploy. Manual approval gate.", "week": 8, "post": "From git push to production in 4 minutes, with tests in the way"},
+    {"id": "as-11", "title": "CloudFormation for the whole stack", "detail": "VPC, subnets, EC2/Beanstalk, RDS, S3, CloudFront. Deletable in one call.", "week": 8, "post": "I rebuilt my AWS stack in CloudFormation so I can delete it for INR 0"},
+    {"id": "as-12", "title": "Load test + cost snapshot", "detail": "Real numbers: requests/sec, p95 latency, monthly estimate", "week": 10, "post": "What my AWS project actually costs per month (real numbers, not estimates)"},
+    {"id": "as-13", "title": "README + architecture diagram + live demo", "detail": "This is the LinkedIn post and the resume bullet", "week": 10, "post": "Shipped: AccoSpark on AWS. Architecture, cost, and the three things I got wrong."}
+   ]
+  },
+  {
+   "id": "genai-aws",
+   "name": "GenAI app on AWS Bedrock",
+   "tagline": "RAG agent on Bedrock with an evaluation harness and a visible scorecard",
+   "whyItStandsOut": "An eval harness with numbers is what separates an AI engineer from a prompt hobbyist. Most applicants will show a demo. You will show a scorecard.",
+   "stack": ["Python", "FastAPI", "AWS Lambda", "API Gateway", "Amazon Bedrock (Claude)", "S3", "S3 Vectors or pgvector", "CloudWatch", "React frontend"],
+   "sourceRepo": "/home/hitesh/hitesh/projects/AI-Data_Cleaning_Chatbot",
+   "github": "https://github.com/Hitesh-K-S/AI-Data-Cleaning-Chatbot",
+   "existingAssets": "You already have a FastAPI + LangChain + Gemini data-cleaning chatbot. Porting it to Bedrock is a genuine before/after story, not a greenfield build.",
+   "targetWeek": 10,
+   "mustShipByWeek": 11,
+   "interviewAngles": [
+    "How do you know if a prompt change made things better or worse?",
+    "Chunking strategy, and what happens when retrieval fails.",
+    "How do you keep a RAG app inside a token budget?",
+    "Where do prompt-injection defences actually go?",
+    "Why Bedrock instead of calling a model API directly?"
+   ],
+   "milestones": [
+    {"id": "gi-1", "title": "Eval set first, app second", "detail": "50-100 Q&A pairs with expected answers BEFORE writing the RAG pipeline. This is the whole project.", "week": 9, "post": "Before I built my RAG app I wrote the test set. That flipped the whole project."},
+    {"id": "gi-2", "title": "Bedrock model call working", "detail": "Lambda + Bedrock, streaming enabled, IAM scoped to one model", "week": 9, "post": "Calling Claude on Bedrock from Lambda, with IAM scoped to exactly one model"},
+    {"id": "gi-3", "title": "S3 + vector store ingestion", "detail": "Upload -> extract -> chunk -> embed. Log your chunk sizes.", "week": 10, "post": "My first RAG retrieval was terrible. The chunk size was the problem."},
+    {"id": "gi-4", "title": "RAG endpoint + React UI", "detail": "API Gateway -> Lambda -> Bedrock, streaming to the browser", "week": 10, "post": "Shipped a RAG agent on AWS. Live demo and what it cost me to run."},
+    {"id": "gi-5", "title": "Eval harness runs, scorecard visible", "detail": "Accuracy, latency p50/p95, cost per query. Store the history.", "week": 10, "post": "I added an eval scorecard to my AI project and it caught a regression I shipped last week"},
+    {"id": "gi-6", "title": "Prompt-injection + guardrails pass", "detail": "Show the attack and the defence. Write it up.", "week": 11, "post": "I tried to break my own RAG agent. Here is the prompt injection that worked."},
+    {"id": "gi-7", "title": "Cost model + budget alarm", "detail": "Tokens per query, monthly projection, alert threshold", "week": 11, "post": "How much does an LLM feature actually cost per user? Real numbers."},
+    {"id": "gi-8", "title": "Write-up + portfolio entry", "detail": "Architecture, eval table, the failures", "week": 11, "post": "My AI engineer's portfolio project: architecture, eval scores, and what I'd rebuild"}
+   ]
+  },
+  {
+   "id": "vulnscan-aws",
+   "name": "VulnScan on AWS",
+   "tagline": "Your existing Python scanner as a serverless security tool",
+   "whyItStandsOut": "One weekend. Connects your cybersecurity resume variant to your cloud pivot. Relevant to SOC and Cloud Security roles.",
+   "stack": ["Python", "AWS Lambda", "API Gateway", "S3 reports", "DynamoDB findings"],
+   "github": "https://github.com/Hitesh-K-S/vulnscan",
+   "status": "BLOCKED - no local repo found. Locate or rebuild before starting.",
+   "targetWeek": 11,
+   "mustShipByWeek": 12,
+   "interviewAngles": [
+    "What can and can you legally scan?",
+    "How do you rate severity, and how do you avoid false-positive noise?",
+    "Serverless is a bad fit for long-running scans - what did you do about that?"
+   ],
+   "milestones": [
+    {"id": "vs-0", "title": "Locate or rebuild VulnScan", "detail": "Resume lists it, disk does not have it. Find the repo or rebuild a minimal version.", "week": 10, "post": null},
+    {"id": "vs-1", "title": "Lambda + API Gateway wrapper", "detail": "Trigger a scan, get a job id", "week": 11, "post": "Turned my Python port scanner into a serverless security tool"},
+    {"id": "vs-2", "title": "S3 reports + DynamoDB findings", "detail": "Per-target report in S3, queryable findings in DynamoDB", "week": 11, "post": "Security findings as data: S3 for the report, DynamoDB for the rows"},
+    {"id": "vs-3", "title": "Write-up of a real finding", "detail": "The security-findings/ folder has two drafts. Publish one properly.", "week": 12, "post": "I found a permissive CORS misconfiguration in my own project. Full writeup."}
+   ]
+  }
+ ]
+}

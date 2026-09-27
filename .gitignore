@@ -1,0 +1,20 @@
+# Progress exports contain your notes - never commit them
+career-hub-*.json
+*.local.json
+
+# Local scratch
+.DS_Store
+*.log
+*.swp
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+
+# Never commit secrets, even in this repo
+.env
+.env.*
+!.env.example
+credentials*.json
+*service-account*.json
+*.pem

@@ -1,0 +1,511 @@
+{
+ "cadence": "3 posts per week for 12 weeks = 36 posts",
+ "rules": [
+  "One artifact per post. Screenshot, diagram, code block, or live link.",
+  "Never post a post without a link or an image. It is a portfolio piece, not a status update.",
+  "Batch-draft all three on Sunday, publish Mon/Wed/Fri around 09:00 or 18:00 IST.",
+  "Reply to every comment within 2 hours. The first hour decides reach.",
+  "Repurpose: a good post becomes a README section, then a resume bullet."
+ ],
+ "format": [
+  "Hook line 1: the specific number, mistake, or result.",
+  "What I built / learned, in plain language.",
+  "The technical detail, 3-6 bullets.",
+  "One lesson, stated as a rule.",
+  "Question at the end that invites a real answer."
+ ],
+ "weeks": [
+  {
+   "week": 1,
+   "posts": [
+    {
+     "hook": "What I changed in my AWS account on day one before touching a single service",
+     "source": "project:accospark-aws#as-1",
+     "type": "project",
+     "evidence": "AWS account hardened",
+     "id": "post-01",
+     "week": 1,
+     "slot": 1,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "I got my AWS account the way most people do: 12 services blinking at me. So I spent day one turning all of it off.",
+     "source": "course",
+     "type": "learning",
+     "evidence": "AWS re/Start week 1",
+     "id": "post-02",
+     "week": 1,
+     "slot": 2,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "The mistake new AWS learners make is starting with services. Start with IAM, budgets, regions, and MFA. Everything else is optional.",
+     "source": "course",
+     "type": "learning",
+     "evidence": "AWS re/Start week 1",
+     "id": "post-03",
+     "week": 1,
+     "slot": 3,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "posts": [
+    {
+     "hook": "Why I picked Elastic Beanstalk over Lambda for my Laravel app",
+     "source": "project:accospark-aws#as-2",
+     "type": "project",
+     "evidence": "Architecture decision record",
+     "id": "post-04",
+     "week": 2,
+     "slot": 1,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "The AWS bill is the thing nobody warns you about.",
+     "source": "course",
+     "type": "learning",
+     "evidence": "AWS re/Start week 2",
+     "id": "post-05",
+     "week": 2,
+     "slot": 2,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "Budget alarms are not a nice-to-have. My first bill would have been INR 4000 for a test that stayed on for a weekend. Here is the alarm setup.",
+     "source": "course",
+     "type": "learning",
+     "evidence": "AWS re/Start week 2",
+     "id": "post-06",
+     "week": 2,
+     "slot": 3,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "posts": [
+    {
+     "hook": "Six shell commands and I suddenly understood what a Linux server actually is.",
+     "source": "course",
+     "type": "learning",
+     "evidence": "AWS re/Start week 3",
+     "id": "post-07",
+     "week": 3,
+     "slot": 1,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "file permissions, processes, ports, systemd, and why 'command not found' is usually a PATH problem. Concise notes from week three.",
+     "source": "course",
+     "type": "learning",
+     "evidence": "AWS re/Start week 3",
+     "id": "post-08",
+     "week": 3,
+     "slot": 2,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "Everything in AWS is a Linux process pretending to be a product.",
+     "source": "course",
+     "type": "learning",
+     "evidence": "AWS re/Start week 3",
+     "id": "post-09",
+     "week": 3,
+     "slot": 3,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "posts": [
+    {
+     "hook": "Networking stopped being scary when I stopped memorising and started tracing packets.",
+     "source": "course",
+     "type": "learning",
+     "evidence": "AWS re/Start week 4",
+     "id": "post-10",
+     "week": 4,
+     "slot": 1,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "VPC, subnet, route table, security group, NACL - drawn as one flow, not five bullet points. This is the diagram that finally made it click.",
+     "source": "course",
+     "type": "learning",
+     "evidence": "AWS re/Start week 4",
+     "id": "post-11",
+     "week": 4,
+     "slot": 2,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "One diagram beats twenty definitions.",
+     "source": "course",
+     "type": "learning",
+     "evidence": "AWS re/Start week 4",
+     "id": "post-12",
+     "week": 4,
+     "slot": 3,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "week": 5,
+   "posts": [
+    {
+     "hook": "Security is not a module. It is a default you choose at every step.",
+     "source": "course",
+     "type": "learning",
+     "evidence": "AWS re/Start week 5",
+     "id": "post-13",
+     "week": 5,
+     "slot": 1,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "IAM policies, least privilege, MFA, encryption at rest and in transit. Real examples from a project I am deploying.",
+     "source": "course",
+     "type": "learning",
+     "evidence": "AWS re/Start week 5",
+     "id": "post-14",
+     "week": 5,
+     "slot": 2,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "The question is never 'is this secure' but 'how would an attacker walk in'.",
+     "source": "course",
+     "type": "learning",
+     "evidence": "AWS re/Start week 5",
+     "id": "post-15",
+     "week": 5,
+     "slot": 3,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "posts": [
+    {
+     "hook": "My Laravel app is finally running on AWS. Here is the boring part that broke.",
+     "source": "project:accospark-aws#as-3",
+     "type": "project",
+     "evidence": "Deploy to EC2 via user-data",
+     "id": "post-16",
+     "week": 6,
+     "slot": 1,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "S3 for files, RDS for the database - the two-storage-pattern problem in one post",
+     "source": "project:accospark-aws#as-4",
+     "type": "project",
+     "evidence": "RDS MySQL provisioned",
+     "id": "post-17",
+     "week": 6,
+     "slot": 2,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "Wrote my first real automation and immediately deleted something by accident.",
+     "source": "course",
+     "type": "learning",
+     "evidence": "AWS re/Start week 6",
+     "id": "post-18",
+     "week": 6,
+     "slot": 3,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "week": 7,
+   "posts": [
+    {
+     "hook": "I locked down my S3 bucket. Here is the policy mistake everyone makes once.",
+     "source": "project:accospark-aws#as-5",
+     "type": "project",
+     "evidence": "S3 + CloudFront for static/media",
+     "id": "post-19",
+     "week": 7,
+     "slot": 1,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "Custom domain + free TLS on AWS in 20 minutes",
+     "source": "project:accospark-aws#as-6",
+     "type": "project",
+     "evidence": "Route 53 + ACM TLS",
+     "id": "post-20",
+     "week": 7,
+     "slot": 2,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "I deleted my SSH keys and can still access my server. Here is how.",
+     "source": "project:accospark-aws#as-7",
+     "type": "project",
+     "evidence": "SSM Session Manager, SSH keys revoked",
+     "id": "post-21",
+     "week": 7,
+     "slot": 3,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "week": 8,
+   "posts": [
+    {
+     "hook": "The three CloudWatch alarms I set up before telling anyone my app is live",
+     "source": "project:accospark-aws#as-9",
+     "type": "project",
+     "evidence": "CloudWatch alarms + dashboard",
+     "id": "post-22",
+     "week": 8,
+     "slot": 1,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "From git push to production in 4 minutes, with tests in the way",
+     "source": "project:accospark-aws#as-10",
+     "type": "project",
+     "evidence": "GitHub Actions deploy pipeline",
+     "id": "post-23",
+     "week": 8,
+     "slot": 2,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "I rebuilt my AWS stack in CloudFormation so I can delete it for INR 0",
+     "source": "project:accospark-aws#as-11",
+     "type": "project",
+     "evidence": "CloudFormation for the whole stack",
+     "id": "post-24",
+     "week": 8,
+     "slot": 3,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "week": 9,
+   "posts": [
+    {
+     "hook": "Before I built my RAG app I wrote the test set. That flipped the whole project.",
+     "source": "project:genai-aws#gi-1",
+     "type": "project",
+     "evidence": "Eval set first, app second",
+     "id": "post-25",
+     "week": 9,
+     "slot": 1,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "Calling Claude on Bedrock from Lambda, with IAM scoped to exactly one model",
+     "source": "project:genai-aws#gi-2",
+     "type": "project",
+     "evidence": "Bedrock model call working",
+     "id": "post-26",
+     "week": 9,
+     "slot": 2,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "AWS Well-Architected Framework is the most useful page on the internet for an AWS interview.",
+     "source": "course",
+     "type": "learning",
+     "evidence": "AWS re/Start week 9",
+     "id": "post-27",
+     "week": 9,
+     "slot": 3,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "week": 10,
+   "posts": [
+    {
+     "hook": "What my AWS project actually costs per month (real numbers, not estimates)",
+     "source": "project:accospark-aws#as-12",
+     "type": "project",
+     "evidence": "Load test + cost snapshot",
+     "id": "post-28",
+     "week": 10,
+     "slot": 1,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "Shipped: AccoSpark on AWS. Architecture, cost, and the three things I got wrong.",
+     "source": "project:accospark-aws#as-13",
+     "type": "project",
+     "evidence": "README + architecture diagram + live demo",
+     "id": "post-29",
+     "week": 10,
+     "slot": 2,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "My first RAG retrieval was terrible. The chunk size was the problem.",
+     "source": "project:genai-aws#gi-3",
+     "type": "project",
+     "evidence": "S3 + vector store ingestion",
+     "id": "post-30",
+     "week": 10,
+     "slot": 3,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "week": 11,
+   "posts": [
+    {
+     "hook": "I tried to break my own RAG agent. Here is the prompt injection that worked.",
+     "source": "project:genai-aws#gi-6",
+     "type": "project",
+     "evidence": "Prompt-injection + guardrails pass",
+     "id": "post-31",
+     "week": 11,
+     "slot": 1,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "How much does an LLM feature actually cost per user? Real numbers.",
+     "source": "project:genai-aws#gi-7",
+     "type": "project",
+     "evidence": "Cost model + budget alarm",
+     "id": "post-32",
+     "week": 11,
+     "slot": 2,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "My AI engineer's portfolio project: architecture, eval scores, and what I'd rebuild",
+     "source": "project:genai-aws#gi-8",
+     "type": "project",
+     "evidence": "Write-up + portfolio entry",
+     "id": "post-33",
+     "week": 11,
+     "slot": 3,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "week": 12,
+   "posts": [
+    {
+     "hook": "I found a permissive CORS misconfiguration in my own project. Full writeup.",
+     "source": "project:vulnscan-aws#vs-3",
+     "type": "project",
+     "evidence": "Write-up of a real finding",
+     "id": "post-34",
+     "week": 12,
+     "slot": 1,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "60 days, two courses, and the projects they produced.",
+     "source": "course",
+     "type": "learning",
+     "evidence": "AWS re/Start week 12",
+     "id": "post-35",
+     "week": 12,
+     "slot": 2,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    },
+    {
+     "hook": "Storage and archiving to finish the AWS module, exam prep, and a look back at everything I built and what it cost.",
+     "source": "course",
+     "type": "learning",
+     "evidence": "AWS re/Start week 12",
+     "id": "post-36",
+     "week": 12,
+     "slot": 3,
+     "status": "idea",
+     "publishedUrl": null,
+     "notes": ""
+    }
+   ]
+  }
+ ]
+}

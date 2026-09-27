@@ -1,0 +1,41 @@
+{
+ "target": {
+  "titles": [
+   "AWS Cloud Engineer",
+   "Cloud Support Engineer",
+   "SysOps Engineer",
+   "DevOps Engineer (entry)",
+   "Junior Backend Engineer (cloud)",
+   "AI Engineer (junior / applied)",
+   "MLOps Engineer (entry)"
+  ],
+  "avoid": ["Senior", "Staff", "Lead", "Architect"],
+  "regions": ["Bengaluru", "Hyderabad", "Pune", "Mumbai", "Remote (India)"],
+  "salaryINR": {"floor": 600000, "target": 1000000, "note": "L4/L5 band. Do not accept below 6L for a support role in Bengaluru."}
+ },
+ "playbook": [
+  {"id": "jb-1", "phase": "Weeks 1-4", "title": "Fix the profile before applying", "detail": "Headline, About, 3 banner-relevant skills, profile photo, custom URL. Add AWS Cloud Practitioner + Generative AI Fundamentals badges as soon as you pass. Set 'Open to work' to recruiters only.", "done": false},
+  {"id": "jb-2", "phase": "Weeks 1-4", "title": "Rewrite every resume bullet as AR", "detail": "Action + Result, with a number. 'Built an AI study tracker in Laravel with 3,200 lines and 10 passing tests' not 'Worked on an app'. Three resume variants: cloud, AI, backend.", "done": false},
+  {"id": "jb-3", "phase": "Weeks 1-4", "title": "Build the recruiter tracker here", "detail": "Every application: company, role, link, date, stage, follow-up date, notes. 20 applications a week, not 5.", "done": false},
+  {"id": "jb-4", "phase": "Weeks 5-8", "title": "Apply to the 3 projects", "detail": "AccoSpark on AWS and the Bedrock app must be live and demoable before week 8 applications. An interviewer who can click your link is a different conversation.", "done": false},
+  {"id": "jb-5", "phase": "Weeks 5-12", "title": "Referral-first, always", "detail": "Message 3 people per week on LinkedIn. A referral is 3-5x more likely to get a screen. Ask specifically: 'Do you know who is hiring cloud engineers at <company>?'", "done": false},
+  {"id": "jb-6", "phase": "Weeks 5-12", "title": "Nail the three standard interviews", "detail": "(1) Walk me through your best project. (2) Live scenario: 'a page is slow, how do you debug it'. (3) Behavioural with STAR. Rehearse out loud, on camera, once a week.", "done": false},
+  {"id": "jb-7", "phase": "Weeks 9-12", "title": "Interview-arc follow-up", "detail": "After every interview, log 3 things you were asked and update the post or project doc that would have answered it better. Repeat the same error and you deserve the same result.", "done": false},
+  {"id": "jb-8", "phase": "Weeks 9-12", "title": "Target the certificate-free shortlist", "detail": "Small-to-mid companies and startups move on portfolio and live-demo ability, not credentials. They also reply faster. Volume matters more than prestige right now.", "done": false}
+ ],
+ "questionBank": [
+  "What is the difference between a security group and a NACL?",
+  "How would you find out why a Lambda is timing out?",
+  "S3 or RDS for this workload - justify it.",
+  "How do you keep costs under control on someone else's AWS account?",
+  "What happens when an EC2 instance fails?",
+  "How do you store and rotate a database password?",
+  "Explain eventual consistency.",
+  "How would you make this deployment zero-downtime?",
+  "What would you monitor first on a new service, and why?",
+  "How do you debug a slow API endpoint, in order?"
+ ],
+ "tracking": [
+  {"company": "", "role": "", "url": "", "applied": "", "stage": "applied", "followUp": "", "notes": ""}
+ ]
+}
